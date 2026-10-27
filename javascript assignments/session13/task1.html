@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validateSpotifyURL(url) {
+    if (!url.startsWith("https://open.spotify.com/")) {
+        throw new Error("Invalid Spotify URL");
+    }
+
+    return "Valid Spotify URL";
+}
+
+try {
+    console.log(validateSpotifyURL("https://open.spotify.com/track/123"));
+    console.log(validateSpotifyURL("https://google.com"));
+} catch (error) {
+    console.log(error.message);
+}
+    </script>
+</body>
+</html>

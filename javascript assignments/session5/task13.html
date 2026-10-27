@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function createPlaylistButton(songName, themeColor) {
+
+  let button = document.createElement("button");
+
+  button.innerText = songName;
+  button.style.backgroundColor = themeColor;
+
+  return button;
+}
+
+document.body.appendChild(
+  createPlaylistButton("Kesariya", "orange")
+);
+
+document.body.appendChild(
+  createPlaylistButton("Tum Hi Ho", "blue")
+);
+
+document.body.appendChild(
+  createPlaylistButton("Apna Bana Le", "purple")
+);
+</script>
+</body>
+</html>

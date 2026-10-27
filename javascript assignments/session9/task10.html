@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Zomato Favorites</h2>
+
+<ul id="list"></ul>
+
+<button onclick="clearFavorites()">
+    Clear Favorites
+</button>
+
+
+<script>
+
+let restaurants = 
+JSON.parse(localStorage.getItem("restaurants")) || [];
+
+
+displayRestaurants();
+
+
+function displayRestaurants(){
+
+    let list = document.getElementById("list");
+
+    list.innerHTML = "";
+
+    restaurants.forEach(function(item){
+
+        let li = document.createElement("li");
+
+        li.innerHTML = item;
+
+        list.appendChild(li);
+
+    });
+
+}
+
+
+
+function clearFavorites(){
+
+    localStorage.removeItem("restaurants");
+
+    restaurants = [];
+
+    displayRestaurants();
+
+}
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let restaurants = [
+  { name: "Dominos", cuisine: "Italian" },
+  { name: "China Town", cuisine: "Chinese" },
+  { name: "Burger King", cuisine: "Fast Food" }
+];
+
+let restaurant = restaurants.find(item => item.cuisine === "Chinese");
+
+console.log(restaurant);
+    </script>
+</body>
+</html>

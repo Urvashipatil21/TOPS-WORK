@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 9</title>
+</head>
+<body>
+
+<h2>Shopping Cart</h2>
+
+<button id="cartBtn">Add to Cart</button>
+
+<div id="cart"></div>
+
+<script>
+function addToCart(){
+document.getElementById("cart").innerHTML+="<p>lipstick</p>";
+
+}
+
+document.querySelector("#cartBtn").addEventListener("click",addToCart);
+</script>
+
+</body>
+</html>

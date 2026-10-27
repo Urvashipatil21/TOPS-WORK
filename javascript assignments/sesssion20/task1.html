@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Add To Cart</title>
+</head>
+<body>
+
+<h2>Product: Mobile Phone</h2>
+<p>Price: ₹15000</p>
+
+<button onclick="addToCart()">Add To Cart</button>
+
+<h3>Cart Count: <span id="count">0</span></h3>
+
+<div id="cart"></div>
+
+<script>
+let cart = [];
+
+function addToCart() {
+
+    let product = {
+        id: 1,
+        name: "Mobile Phone",
+        price: 15000
+    };
+
+    let exists = cart.find(item => item.id === product.id);
+
+    if (!exists) {
+        cart.push(product);
+        alert("Product Added to Cart");
+    } 
+    else {
+        alert("Product already added");
+    }
+
+    document.getElementById("count").innerHTML = cart.length;
+
+    displayCart();
+}
+
+function displayCart() {
+
+    let output = "";
+
+    cart.forEach(item => {
+        output += `<p>${item.name} - ₹${item.price}</p>`;
+    });
+
+    document.getElementById("cart").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
+    </script>

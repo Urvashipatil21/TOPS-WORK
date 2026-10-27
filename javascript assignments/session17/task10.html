@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+.notification{
+padding:10px;
+margin:10px;
+border:1px solid black;
+transition:0.5s;
+}
+
+.hide{
+opacity:0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h2>YouTube Notifications</h2>
+
+
+<div id="feed">
+
+
+<div class="notification">
+New Video Uploaded
+<button class="dismiss">Dismiss</button>
+</div>
+
+
+<div class="notification">
+Your comment got reply
+<button class="dismiss">Dismiss</button>
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+const feed=document.getElementById("feed");
+
+
+feed.addEventListener("click",function(e){
+
+
+if(e.target.classList.contains("dismiss")){
+
+
+let card=e.target.parentElement;
+
+
+card.classList.add("hide");
+
+
+setTimeout(()=>{
+
+card.remove();
+
+},500);
+
+
+}
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>

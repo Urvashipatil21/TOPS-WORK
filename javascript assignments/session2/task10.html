@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user1 = "urvashi";
+let user2 = user1;
+
+user1 = "urvashi";
+
+console.log(user1);
+console.log(user2);
+
+let favApps1 = ["Instagram", "Spotify"];
+let favApps2 = favApps1;
+
+favApps1.push("Zomato");
+
+console.log(favApps1);
+console.log(favApps2);
+
+// Primitive values are copied.
+// Arrays are reference types, so both variables point to the same array.
+    </script>
+</body>
+</html>

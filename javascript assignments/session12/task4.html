@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Movies</title>
+</head>
+<body>
+
+<script>
+function fetchTopMovies() {
+
+fetch("https://jsonplaceholder.typicode.com/albums")
+.then(response => response.json())
+.then(movies => {
+
+movies.slice(0,3).forEach(movie => {
+console.log("Trending Movie:", movie.title);
+});
+
+})
+.catch(error => console.log(error));
+
+}
+
+fetchTopMovies();
+</script>
+
+</body>
+</html>

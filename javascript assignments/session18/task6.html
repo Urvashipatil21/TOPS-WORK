@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function addToCart(productName, quantity) {
+
+    if (quantity > 0) {
+        console.log(`✅ ${quantity} ${productName} added to cart.`);
+    }
+    else if (quantity === 0) {
+        console.warn("⚠️ Quantity cannot be zero.");
+    }
+    else {
+        console.error("❌ Quantity cannot be negative.");
+    }
+
+}
+
+addToCart("Laptop", 2);
+addToCart("Mouse", 0);
+addToCart("Keyboard", -1);
+    </script>
+</body>
+</html>

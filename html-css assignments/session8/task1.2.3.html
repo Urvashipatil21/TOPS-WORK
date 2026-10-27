@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product Card</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f6;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .product-card {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #cccccc;
+        }
+
+        .product-card img {
+            width: 40%;
+            max-width: 350px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h2 {
+            font-size: 28px;
+        }
+
+        .price {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            background-color: #2874f0;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Screen width: 1200px or less */
+        @media only screen and (max-width: 1200px) {
+            .product-card {
+                padding: 25px;
+            }
+
+            .product-details h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* Screen width: 900px or less */
+        @media only screen and (max-width: 900px) {
+            body {
+                padding: 20px;
+            }
+
+            .product-card {
+                padding: 20px;
+                gap: 18px;
+            }
+
+            .product-details h2 {
+                font-size: 23px;
+            }
+
+            .price {
+                font-size: 21px;
+            }
+        }
+
+        /* Screen width: 600px or less */
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .product-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 18px;
+                gap: 12px;
+            }
+
+            .product-card img {
+                width: 80%;
+                max-width: 250px;
+            }
+
+            .product-details h2 {
+                font-size: 20px;
+            }
+
+            .price {
+                font-size: 19px;
+            }
+
+            .buy-btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-card">
+        <img
+            src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=500&fit=crop"
+            alt="Smartphone">
+
+        <div class="product-details">
+            <h2>Samsung Galaxy Smartphone</h2>
+            <p>Experience amazing performance and a stylish design.</p>
+            <p class="price">₹19,999</p>
+            <p>Rating: 4.5 ⭐</p>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+</body>
+</html>

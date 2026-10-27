@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mood Box</title>
+</head>
+
+<body>
+
+<input id="colorInput" placeholder="Type color name">
+
+<div id="moodbox" 
+style="width:200px;height:200px;border:1px solid black;">
+</div>
+
+
+<script>
+
+let input = document.querySelector("#colorInput");
+
+input.addEventListener("input", function(){
+
+document.getElementById("moodbox").style.backgroundColor =
+input.value;
+
+});
+
+</script>
+
+</body>
+</html>

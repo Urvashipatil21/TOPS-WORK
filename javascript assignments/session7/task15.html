@@ -1,0 +1,7 @@
+Briefly explain (in 2–3 sentences) what event flow is in the DOM, and give one example of how event bubbling could affect a shopping cart app like Flipkart.
+
+Answer:
+
+Event flow is the order in which events travel through the DOM. It has three phases: capturing, target, and bubbling. 
+In a shopping cart app like Flipkart, if a user clicks the "Add to Cart" button, the click event can bubble up to the parent product card,
+ causing both the button action and the product card's click event to run unless event bubbling is stopped.

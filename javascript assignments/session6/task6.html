@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Friend</title>
+</head>
+
+<body>
+
+<input type="text" id="friend" placeholder="Friend name">
+<button onclick="addFriend()">Add Friend</button>
+
+<ul id="friend-list"></ul>
+
+<script>
+
+function addFriend(){
+
+let name = document.querySelector("#friend").value;
+
+let li = document.createElement("li");
+li.innerHTML = name;
+
+document.querySelector("#friend-list").appendChild(li);
+
+}
+
+</script>
+
+</body>
+</html>

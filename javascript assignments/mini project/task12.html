@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function toggleTheme(){
+
+    document.body.classList.toggle("dark-mode");
+
+
+    let theme = document.body.classList.contains("dark-mode")
+    ? "dark"
+    : "light";
+
+
+    localStorage.setItem(
+        "theme",
+        theme
+    );
+
+}
+
+
+// Apply saved theme when page loads
+
+let savedTheme = localStorage.getItem("theme");
+
+
+if(savedTheme === "dark"){
+
+    document.body.classList.add("dark-mode");
+
+}
+    </script>
+</body>
+</html>

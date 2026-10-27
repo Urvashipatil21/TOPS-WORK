@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Playlist</title>
+</head>
+
+<body>
+
+<h2>Create New Playlist</h2>
+
+<label>Playlist Name:</label>
+<br>
+<input type="text" id="playlistName" placeholder="Enter playlist name">
+
+<p id="nameError" style="color:red;"></p>
+
+
+<label>Description:</label>
+<br>
+<textarea id="description" placeholder="Enter description"></textarea>
+
+<p id="descriptionError" style="color:red;"></p>
+
+
+<button onclick="createPlaylist()">Create Playlist</button>
+
+<p id="success" style="color:green;"></p>
+
+
+<script>
+
+function createPlaylist(){
+
+    let name = document.getElementById("playlistName").value;
+    let description = document.getElementById("description").value;
+
+
+    let nameError = document.getElementById("nameError");
+    let descriptionError = document.getElementById("descriptionError");
+    let success = document.getElementById("success");
+
+
+    // Clear previous messages
+    nameError.innerHTML = "";
+    descriptionError.innerHTML = "";
+    success.innerHTML = "";
+
+
+    let valid = true;
+
+
+    // Check empty fields
+    if(name === ""){
+        nameError.innerHTML = "Playlist name is required";
+        valid = false;
+    }
+
+
+    if(description === ""){
+        descriptionError.innerHTML = "Description is required";
+        valid = false;
+    }
+
+
+    if(valid){
+        success.innerHTML = "Playlist Created Successfully";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

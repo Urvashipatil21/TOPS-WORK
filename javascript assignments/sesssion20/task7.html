@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Review</title>
+</head>
+
+<body>
+
+<h2>Add Review</h2>
+
+<textarea id="review" placeholder="Write your review"></textarea>
+
+<p id="error" style="color:red;"></p>
+
+<button onclick="addReview()">Submit Review</button>
+
+<p id="message" style="color:green;"></p>
+
+
+<script>
+
+function addReview(){
+
+    let review = document.getElementById("review").value;
+
+    let error = document.getElementById("error");
+    let message = document.getElementById("message");
+
+
+    // Clear old messages
+    error.innerHTML = "";
+    message.innerHTML = "";
+
+
+    // Check empty review
+    if(review.trim() === ""){
+        error.innerHTML = "Review cannot be empty";
+        return;
+    }
+
+
+    message.innerHTML = "Review submitted successfully";
+
+}
+
+</script>
+
+
+</body>
+</html>

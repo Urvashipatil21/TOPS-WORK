@@ -1,0 +1,31 @@
+﻿Assignment - Session 1: Procedural vs Object-Oriented Thinking
+Task 5: Comparison of Procedural C Version and OOP C++ Version
+
+In this assignment, we built a Task List in two ways:
+1. Procedural approach using C (tasklist_c.c)
+2. Object-Oriented approach using C++ (tasklist_cpp.cpp)
+
+Here are 3 problems faced in the procedural C version and how they were solved in the OOP C++ version:
+
+1. Global Variables and No Data Protection (Encapsulation)
+- Problem in C:
+  In the C version, the tasks array and taskCount are global variables. Any function in the program can directly modify or corrupt the data by mistake. There is no protection.
+- Solution in C++:
+  In C++, we used private access specifiers inside the Task and TaskList classes. Only the member methods (addTask, markTaskDone, showTasks) can modify the data. This protects the data from unauthorized changes.
+
+2. Separation of Data and Logic
+- Problem in C:
+  In C, data (char array) and functions (addTask, markTaskDone) are separate. To track whether a task is done, we had to manually append " - DONE" to the string, which is messy and error-prone.
+- Solution in C++:
+  In C++, the Task class bundles the data (title, isDone) together with the methods (markDone(), display()). Each task object knows its own state and how to display itself. This makes the code cleaner and easier to understand.
+
+3. Fixed Size Limit and Lack of Reusability
+- Problem in C:
+  The C version uses a fixed-size array (MAX_TASKS = 5). If we want to store more than 5 tasks, we have to change the source code. Also, we cannot easily create two separate lists (like Home tasks and Work tasks) without duplicating code.
+- Solution in C++:
+  In C++, TaskList uses std::vector, so tasks can grow dynamically without hardcoded limits. Moreover, we can create multiple independent task lists simply by creating new objects:
+  TaskList workList;
+  TaskList personalList;
+
+Conclusion:
+OOP in C++ makes our code modular, safe, reusable, and easy to maintain compared to the procedural C approach.

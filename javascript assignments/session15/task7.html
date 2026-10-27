@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class FlipkartProduct {
+  constructor(title, price, rating) {
+    this.title = title;
+    this.price = price;
+    this.rating = rating;
+  }
+
+  getDiscountedPrice(discountPercent) {
+    return this.price - (this.price * discountPercent / 100);
+  }
+}
+
+const product = new FlipkartProduct("Redmi Note 12 Pro", 18999, 4.5);
+
+console.log("Discounted Price:", product.getDiscountedPrice(10));
+    </script>
+</body>
+</html>

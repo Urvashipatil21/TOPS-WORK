@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 10</title>
+    <style>
+        .movie{
+            border:1px solid black;
+            padding:10px;
+            margin:10px;
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="movie">
+    Avengers
+    <button class="remove">Remove</button>
+</div>
+
+<div class="movie">
+    Spider-Man
+    <button class="remove">Remove</button>
+</div>
+
+<div class="movie">
+    Titanic
+    <button class="remove">Remove</button>
+</div>
+
+<script>
+let buttons=document.querySelectorAll(".remove");
+
+buttons.forEach(function(button){
+    button.addEventListener("click",function(){
+        this.parentElement.remove();
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div id="stories">
+
+<div class="story">
+Instagram Story 1
+<button class="remove">X</button>
+</div>
+
+<div class="story">
+Instagram Story 2
+<button class="remove">X</button>
+</div>
+
+</div>
+
+
+<script>
+
+const stories=document.getElementById("stories");
+
+
+stories.addEventListener("click",function(e){
+
+if(e.target.classList.contains("remove")){
+    e.target.parentElement.remove();
+}
+
+});
+
+</script>

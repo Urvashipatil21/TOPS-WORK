@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Playlist</title>
+</head>
+
+<body>
+
+<h2>Create Playlist</h2>
+
+<form onsubmit="addPlaylist(event)">
+
+    <label>Playlist Name:</label><br>
+    <input type="text" id="name">
+    <br><br>
+
+    <label>Description:</label><br>
+    <textarea id="description"></textarea>
+    <br><br>
+
+    <button type="submit">Create Playlist</button>
+
+</form>
+
+
+<script>
+
+let playlists = [];
+
+
+function addPlaylist(event){
+
+    event.preventDefault();
+
+
+    let name = document.getElementById("name").value;
+    let description = document.getElementById("description").value;
+
+
+    let playlist = {
+        playlistName: name,
+        playlistDescription: description
+    };
+
+
+    playlists.push(playlist);
+
+
+    console.log(playlists);
+
+
+    document.getElementById("name").value = "";
+    document.getElementById("description").value = "";
+
+}
+
+</script>
+
+
+</body>
+</html>

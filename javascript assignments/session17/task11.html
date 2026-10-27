@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>YouTube Notifications</title>
+
+<style>
+
+.notification{
+    border:1px solid black;
+    padding:15px;
+    margin:10px;
+    width:300px;
+    transition:0.5s;
+}
+
+.fade{
+    opacity:0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>YouTube Notification Feed</h2>
+
+<button id="addNotification">
+    Add Notification
+</button>
+
+<div id="notificationFeed">
+
+    <div class="notification">
+        New Video Uploaded
+        <button class="dismiss">Dismiss</button>
+    </div>
+
+    <div class="notification">
+        Your video got a like
+        <button class="dismiss">Dismiss</button>
+    </div>
+
+</div>
+
+
+<script>
+
+const feed = document.getElementById("notificationFeed");
+const addBtn = document.getElementById("addNotification");
+
+
+// Dynamic notification add
+
+addBtn.addEventListener("click",function(){
+
+    let card = document.createElement("div");
+
+    card.className = "notification";
+
+    card.innerHTML =
+    "New YouTube Notification <button class='dismiss'>Dismiss</button>";
+
+    feed.appendChild(card);
+
+});
+
+
+// Event Delegation
+
+feed.addEventListener("click",function(event){
+
+    if(event.target.classList.contains("dismiss")){
+
+        let card = event.target.parentElement;
+
+        card.classList.add("fade");
+
+        setTimeout(function(){
+
+            card.remove();
+
+        },500);
+
+    }
+
+});
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Validation</title>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<label>Email:</label>
+<br>
+<input type="email" id="email" placeholder="Enter Email">
+
+<p id="emailError" style="color:red;"></p>
+
+
+<label>Password:</label>
+<br>
+<input type="password" id="password" placeholder="Enter Password">
+
+<p id="passwordError" style="color:red;"></p>
+
+
+<button onclick="login()">Login</button>
+
+<p id="message" style="color:green;"></p>
+
+
+<script>
+
+function login(){
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+    let message = document.getElementById("message");
+
+
+    // Clear previous messages
+    emailError.innerHTML = "";
+    passwordError.innerHTML = "";
+    message.innerHTML = "";
+
+
+    // Validation check
+
+    if(email === ""){
+        emailError.innerHTML = "Email field is required";
+    }
+
+
+    if(password === ""){
+        passwordError.innerHTML = "Password field is required";
+    }
+
+
+    if(email !== "" && password !== ""){
+        message.innerHTML = "Login Successful";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

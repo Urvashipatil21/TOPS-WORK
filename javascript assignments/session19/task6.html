@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Restaurant</title>
+</head>
+
+<body>
+
+<h2>Add Restaurant</h2>
+
+<label>Restaurant Name:</label>
+<br>
+<input type="text" id="restaurantName">
+
+<br><br>
+
+<label>Cuisine:</label>
+<br>
+<input type="text" id="cuisine">
+
+<br><br>
+
+<label>Rating:</label>
+<br>
+<input type="number" id="rating">
+
+<br><br>
+
+<button onclick="addRestaurant()">Add Restaurant</button>
+
+
+<script>
+
+let restaurants = [];
+
+function addRestaurant(){
+
+    let name = document.getElementById("restaurantName").value;
+    let cuisine = document.getElementById("cuisine").value;
+    let rating = document.getElementById("rating").value;
+
+
+    let restaurant = {
+        name: name,
+        cuisine: cuisine,
+        rating: rating
+    };
+
+
+    restaurants.push(restaurant);
+
+
+    console.log(restaurants);
+
+
+    // Clear fields
+    document.getElementById("restaurantName").value = "";
+    document.getElementById("cuisine").value = "";
+    document.getElementById("rating").value = "";
+
+}
+
+</script>
+
+
+</body>
+</html>

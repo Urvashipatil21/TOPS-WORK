@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music & Gamer Links</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f4f8;
+            color: #222;
+        }
+
+        header {
+            background: #17172b;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+        }
+
+        .gamer-card {
+            background: #242442;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+        }
+
+        .avatar {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 4px solid #a78bfa;
+            object-fit: cover;
+        }
+
+        .gamer-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .gamer-buttons a {
+            background: #a78bfa;
+            color: #17172b;
+            padding: 11px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .gamer-buttons a:hover {
+            background: white;
+        }
+
+        .form-card,
+        .preview-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px #00000010;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            margin: 12px 0;
+            overflow: hidden;
+        }
+
+        .input-icon {
+            padding: 12px;
+            font-size: 21px;
+            background: #f1f1f7;
+        }
+
+        .input-group input {
+            width: 100%;
+            min-width: 0;
+            padding: 13px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            padding: 13px 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 10px;
+            background: #6254d9;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #493bb8;
+        }
+
+        #message {
+            color: #c62828;
+            margin-bottom: 0;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .preview-card {
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 5px solid;
+            overflow-wrap: anywhere;
+        }
+
+        .preview-card h3 {
+            margin: 0 0 10px;
+        }
+
+        .preview-card p {
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .preview-card a {
+            display: inline-block;
+            padding: 9px 16px;
+            border-radius: 7px;
+            text-decoration: none;
+            color: white;
+            margin-top: 5px;
+        }
+
+        .spotify {
+            background: #e7f8ed;
+            border-color: #1db954;
+        }
+
+        .spotify a {
+            background: #1db954;
+        }
+
+        .youtube {
+            background: #fff0f0;
+            border-color: #ff0033;
+        }
+
+        .youtube a {
+            background: #ff0033;
+        }
+
+        .apple {
+            background: #f8eefe;
+            border-color: #b84de5;
+        }
+
+        .apple a {
+            background: #b84de5;
+        }
+
+        .instagram {
+            background: #fff0f6;
+            border-color: #e1306c;
+        }
+
+        .instagram a {
+            background: #e1306c;
+        }
+
+        .linkedin {
+            background: #eaf4ff;
+            border-color: #0a66c2;
+        }
+
+        .linkedin a {
+            background: #0a66c2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 94%;
+                margin: 15px auto;
+            }
+
+            .form-card,
+            .preview-section {
+                padding: 17px;
+            }
+
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .gamer-card {
+                padding: 20px 12px;
+            }
+        }
+
+        @media only screen and (min-width: 601px) and (max-width: 900px) {
+            .preview-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Music & Gamer Links</h1>
+        <p>All your favorite links in one place!</p>
+    </header>
+
+    <main class="container">
+
+        <section class="gamer-card">
+            <img
+                class="avatar"
+                src="https://placehold.co/150x150/8b5cf6/ffffff?text=Gamer"
+                alt="Gamer Avatar"
+            >
+
+            <h2>Up Gamer</h2>
+            <p>🎮 Gamer | Streamer | Music Lover</p>
+
+            <div class="gamer-buttons">
+                <a href="https://www.twitch.tv/"
+                   target="_blank" rel="noopener noreferrer">🎮 Twitch</a>
+
+                <a href="https://discord.com/"
+                   target="_blank" rel="noopener noreferrer">💬 Discord</a>
+
+                <a href="https://store.steampowered.com/"
+                   target="_blank" rel="noopener noreferrer">🕹️ Steam</a>
+            </div>
+        </section>
+
+        <section class="form-card">
+            <h2>🔗 Add Your Music & Social Links</h2>
+
+            <form id="musicLinksForm">
+
+                <div class="input-group">
+                    <span class="input-icon">🟢</span>
+                    <input type="url" id="spotify"
+                        placeholder="Spotify profile URL"
+                        aria-label="Spotify profile URL">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">▶️</span>
+                    <input type="url" id="youtube"
+                        placeholder="YouTube Music profile URL"
+                        aria-label="YouTube Music profile URL">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">🎵</span>
+                    <input type="url" id="apple"
+                        placeholder="Apple Music profile URL"
+                        aria-label="Apple Music profile URL">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">📸</span>
+                    <input type="url" id="instagram"
+                        placeholder="Instagram profile URL"
+                        aria-label="Instagram profile URL">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">💼</span>
+                    <input type="url" id="linkedin"
+                        placeholder="LinkedIn profile URL"
+                        aria-label="LinkedIn profile URL">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Show My Links
+                </button>
+
+                <p id="message" role="status"></p>
+            </form>
+        </section>
+
+        <section class="preview-section">
+            <h2>✨ My Link Previews</h2>
+
+            <div id="previewGrid" class="preview-grid">
+                <p>Your submitted links will appear here.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by a Music & Gaming Fan</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("musicLinksForm");
+        const previewGrid = document.getElementById("previewGrid");
+        const message = document.getElementById("message");
+
+        const platforms = [
+            {
+                id: "spotify",
+                name: "Spotify",
+                icon: "🟢",
+                className: "spotify",
+                domains: ["open.spotify.com"]
+            },
+            {
+                id: "youtube",
+                name: "YouTube Music",
+                icon: "▶️",
+                className: "youtube",
+                domains: ["music.youtube.com"]
+            },
+            {
+                id: "apple",
+                name: "Apple Music",
+                icon: "🎵",
+                className: "apple",
+                domains: ["music.apple.com"]
+            },
+            {
+                id: "instagram",
+                name: "Instagram",
+                icon: "📸",
+                className: "instagram",
+                domains: ["instagram.com", "www.instagram.com"]
+            },
+            {
+                id: "linkedin",
+                name: "LinkedIn",
+                icon: "💼",
+                className: "linkedin",
+                domains: ["linkedin.com", "www.linkedin.com"]
+            }
+        ];
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            previewGrid.innerHTML = "";
+            message.textContent = "";
+
+            let count = 0;
+
+            platforms.forEach(function(platform) {
+                const input = document.getElementById(platform.id);
+                const value = input.value.trim();
+
+                if (value === "") {
+                    return;
+                }
+
+                let url;
+
+                try {
+                    url = new URL(value);
+                } catch {
+                    message.textContent = "Please enter valid profile URLs.";
+                    return;
+                }
+
+                const hostname = url.hostname.toLowerCase();
+
+                if (
+                    url.protocol !== "https:" &&
+                    url.protocol !== "http:"
+                ) {
+                    message.textContent = "Please enter valid web links.";
+                    return;
+                }
+
+                const validDomain = platform.domains.some(function(domain) {
+                    return hostname === domain ||
+                        hostname.endsWith("." + domain);
+                });
+
+                if (!validDomain) {
+                    message.textContent =
+                        "Please enter the correct " +
+                        platform.name + " URL.";
+                    return;
+                }
+
+                const parts = url.pathname.split("/").filter(Boolean);
+                const username = parts.length > 0
+                    ? decodeURIComponent(parts[parts.length - 1])
+                    : platform.name + " Profile";
+
+                const card = document.createElement("article");
+                card.className = "preview-card " + platform.className;
+
+                const title = document.createElement("h3");
+                title.textContent = platform.icon + " " + platform.name;
+
+                const handle = document.createElement("p");
+                handle.textContent = "Username / Handle: " + username;
+
+                const visit = document.createElement("a");
+                visit.textContent = "Visit";
+                visit.href = url.href;
+                visit.target = "_blank";
+                visit.rel = "noopener noreferrer";
+
+                card.appendChild(title);
+                card.appendChild(handle);
+                card.appendChild(visit);
+
+                previewGrid.appendChild(card);
+                count++;
+            });
+
+            if (count === 0 && message.textContent === "") {
+                previewGrid.innerHTML =
+                    "<p>Please enter at least one profile link.</p>";
+            }
+        });
+    </script>
+
+</body>
+</html>
