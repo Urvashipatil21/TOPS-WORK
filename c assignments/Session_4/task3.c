@@ -1,18 +1,19 @@
-#include <stdio.h>
 
-int isEligibleForOffer(int age, float totalOrderValue)
-{
-    return age >= 18 && totalOrderValue > 500;
-}
+#include <stdio.h>
 
 int main()
 {
-    int age = 20;
-    float totalOrderValue = 800;
+    float subtotal = 301.75;
+    int cash = 500;
+    float grand_total = 316.84;
+    int quantity1 = 2;
 
-    int result = isEligibleForOffer(age, totalOrderValue);
+    int free_delivery1 = subtotal > 250 || cash >= grand_total && quantity1 >= 3;
 
-    printf("Eligible for Offer: %s\n", result ? "true" : "false");
+    int free_delivery2 = (subtotal > 250 || cash >= grand_total) && quantity1 >= 3;
+
+    printf("Free Delivery without parentheses: %d\n", free_delivery1);
+    printf("Free Delivery with parentheses: %d\n", free_delivery2);
 
     return 0;
 }

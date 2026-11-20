@@ -1,13 +1,17 @@
+
 #include <stdio.h>
+
+#define GST_PERCENT 5
 
 int main()
 {
-    char playlistName[] = "My Favorite Songs";
-    int totalSongs = 25;
-    float averageDuration = 3.5;
+    const float DELIVERY_CHARGE = 20.50;
 
-    printf("My Spotify playlist \"%s\" has %d songs with an average duration of %.1f minutes.\n",
-           playlistName, totalSongs, averageDuration);
+    printf("Bill Settings:\n");
+    printf("GST Percent: %d%%\n", GST_PERCENT);
+    printf("Delivery Charge: %.2f\n", DELIVERY_CHARGE);
+    printf("Category: %c\n", 'R');
+    printf("Message: %s\n", "Thank you");
 
     return 0;
 }

@@ -1,18 +1,19 @@
+
 #include <stdio.h>
 
 int main()
 {
-    int firstPlayer = 1;
-    int player_age = 20;
-    int score = 100;
-    int total_marks = 500;
-    int userName = 10;
+    int customer_id = 101;
+    float loyalty_points = 250.5;
+    char member_class = 'A';
+    double discount_rate = 10.75;
 
-    printf("firstPlayer = %d\n", firstPlayer);
-    printf("player_age = %d\n", player_age);
-    printf("score = %d\n", score);
-    printf("total_marks = %d\n", total_marks);
-    printf("userName = %d\n", userName);
+    printf("Customer Details\n");
+    printf("------------------------\n");
+    printf("Customer ID: %d\n", customer_id);
+    printf("Loyalty Points: %.1f\n", loyalty_points);
+    printf("Member Class: %c\n", member_class);
+    printf("Discount Rate: %.2f\n", discount_rate);
 
     return 0;
 }

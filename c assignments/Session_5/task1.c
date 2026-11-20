@@ -1,39 +1,40 @@
+
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-    char team[50];
+    float subtotal;
+    float discount = 0;
+    float discount_amount;
+    float gst;
+    float grand_total;
 
-    printf("Enter your favorite IPL team: ");
-    fgets(team, sizeof(team), stdin);
+    printf("Enter subtotal: ");
+    scanf("%f", &subtotal);
 
-    team[strcspn(team, "\n")] = '\0';
-
-    if (strcmp(team, "Mumbai Indians") == 0)
+    if (subtotal <= 200)
     {
-        printf("Go Mumbai Indians!\n");
+        discount = 0;
     }
-    else if (strcmp(team, "Chennai Super Kings") == 0)
+    else if (subtotal <= 500)
     {
-        printf("Chennai Super Kings for the win!\n");
-    }
-    else if (strcmp(team, "Royal Challengers Bengaluru") == 0)
-    {
-        printf("Go RCB! Ee Sala Cup Namde!\n");
-    }
-    else if (strcmp(team, "Kolkata Knight Riders") == 0)
-    {
-        printf("Come on Kolkata Knight Riders!\n");
-    }
-    else if (strcmp(team, "Rajasthan Royals") == 0)
-    {
-        printf("Go Rajasthan Royals!\n");
+        discount = 5;
     }
     else
     {
-        printf("Team not found!\n");
+        discount = 10;
     }
+
+    discount_amount = subtotal * discount / 100.0;
+    subtotal = subtotal - discount_amount;
+
+    gst = subtotal * 5 / 100.0;
+    grand_total = subtotal + gst;
+
+    printf("Discount: %.2f%%\n", discount);
+    printf("Discount Amount: %.2f\n", discount_amount);
+    printf("GST: %.2f\n", gst);
+    printf("Grand Total: %.2f\n", grand_total);
 
     return 0;
 }

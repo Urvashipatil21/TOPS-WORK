@@ -1,16 +1,20 @@
+
 #include <stdio.h>
 
 int main()
 {
-    int followerCount = 5;
+    int bill_no = 100;
 
-    printf("Original count: %d\n", followerCount);
+    printf("Bill Number: %d\n", bill_no++);
+    printf("Bill Number: %d\n", ++bill_no);
 
-    printf("Pre-increment: %d\n", ++followerCount);
+    int stock1 = 20;
 
-    printf("Post-increment: %d\n", followerCount++);
+    stock1 -= 2;
+    printf("Stock after subtraction: %d\n", stock1);
 
-    printf("Count after increment: %d\n", followerCount);
+    stock1--;
+    printf("Stock after decrement: %d\n", stock1);
 
     return 0;
 }
