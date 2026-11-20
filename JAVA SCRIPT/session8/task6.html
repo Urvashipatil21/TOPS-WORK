@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const playlists = [
+  {
+    name: "Top Hits",
+    creator: "Rahul",
+    numberOfSongs: 20
+  },
+  {
+    name: "Workout Mix",
+    creator: "Priya",
+    numberOfSongs: 15
+  }
+];
+
+playlists.push({
+  name: "Jazz Collection",
+  creator: "Amit",
+  numberOfSongs: 14,
+  genre: "Jazz"
+});
+
+console.log("After Push:", playlists);
+
+playlists.pop();
+
+console.log("After Pop:", playlists);  
+    </script>
+</body>
+</html>

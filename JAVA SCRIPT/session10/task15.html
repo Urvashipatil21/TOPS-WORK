@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const getFollowersSummary = (...followers) => {
+    let total = followers.reduce((sum, count) => sum + count, 0);
+
+    return `Total followers: ${total}`;
+};
+
+console.log(getFollowersSummary(400, 300, 500));
+    </script>
+</body>
+</html>

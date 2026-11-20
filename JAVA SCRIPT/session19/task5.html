@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playlist Manager</title>
+</head>
+
+<body>
+
+<h2>Create New Playlist</h2>
+
+<input type="text" id="name" placeholder="Playlist Name">
+<br><br>
+
+<textarea id="desc" placeholder="Playlist Description"></textarea>
+<br><br>
+
+<button onclick="addPlaylist()">Add Playlist</button>
+
+
+<h2>My Playlists</h2>
+
+<div id="playlistDisplay"></div>
+
+
+<script>
+
+let playlists = [];
+
+
+// Add playlist
+function addPlaylist(){
+
+    let name = document.getElementById("name").value;
+    let desc = document.getElementById("desc").value;
+
+
+    let newPlaylist = {
+        name: name,
+        description: desc
+    };
+
+
+    playlists.push(newPlaylist);
+
+
+    displayPlaylists();
+
+
+    // Clear input fields
+    document.getElementById("name").value = "";
+    document.getElementById("desc").value = "";
+
+}
+
+
+// Display playlist list
+function displayPlaylists(){
+
+    let list = "";
+
+
+    playlists.forEach(function(item){
+
+        list += `
+            <div>
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <hr>
+            </div>
+        `;
+
+    });
+
+
+    document.getElementById("playlistDisplay").innerHTML = list;
+
+}
+
+</script>
+
+
+</body>
+</html>

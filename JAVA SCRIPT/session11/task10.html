@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let products = [
+    {name:"iPhone"},
+    {name:"Laptop"},
+    {name:"Shoes"},
+    {name:"iPhone Cover"}
+];
+
+
+// Callback Version
+
+function searchProductCallback(search, callback){
+
+    setTimeout(()=>{
+
+        let result = products.filter(product =>
+            product.name.includes(search)
+        );
+
+        callback(result);
+
+    },1000);
+
+}
+
+
+searchProductCallback("iPhone",(result)=>{
+    console.log(result);
+});
+
+
+
+// Promise Version
+
+function searchProductPromise(search){
+
+    return new Promise((resolve)=>{
+
+        setTimeout(()=>{
+
+            let result = products.filter(product =>
+                product.name.includes(search)
+            );
+
+            resolve(result);
+
+        },1000);
+
+    });
+
+}
+
+
+searchProductPromise("Laptop")
+.then((result)=>{
+    console.log(result);
+});
+    </script>
+</body>
+</html>

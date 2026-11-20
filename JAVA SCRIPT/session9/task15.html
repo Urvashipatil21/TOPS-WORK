@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+</head>
+<body>
+
+<h2>My Wishlist</h2>
+
+<div id="wishlist"></div>
+
+<button id="clearBtn">Clear Wishlist</button>
+
+
+<script>
+
+let products = [
+    {
+        name: "iPhone 15",
+        price: 70000
+    },
+    {
+        name: "Watch",
+        price: 3000
+    },
+    {
+        name: "Shoes",
+        price: 4000
+    }
+];
+
+
+// Save data
+localStorage.setItem("wishlist", JSON.stringify(products));
+
+
+// Display wishlist function
+function displayWishlist(){
+
+    let data = localStorage.getItem("wishlist");
+
+    let output = "";
+
+    if(data){
+
+        let items = JSON.parse(data);
+
+        items.forEach(product => {
+
+            output += `
+            <p>
+            ${product.name} - ₹${product.price}
+            </p>
+            `;
+
+        });
+
+    }
+    else{
+        output = "Wishlist is empty";
+    }
+
+
+    document.getElementById("wishlist").innerHTML = output;
+
+}
+
+
+// Clear wishlist button
+document.getElementById("clearBtn").addEventListener("click", function(){
+
+    localStorage.removeItem("wishlist");
+
+    displayWishlist();
+
+});
+
+
+displayWishlist();
+
+
+</script>
+
+</body>
+</html>

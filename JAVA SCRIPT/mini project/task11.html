@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myPlaylists = JSON.parse(localStorage.getItem("myPlaylists")) || [];
+
+
+function manageLink(linkObj, mode){
+
+    if(mode === "add"){
+
+        myPlaylists.push(linkObj);
+
+    }
+
+    else if(mode === "edit"){
+
+        myPlaylists[linkObj.index] = {
+            name: linkObj.name,
+            url: linkObj.url
+        };
+
+    }
+
+
+    // Common LocalStorage update (no repeat code)
+    localStorage.setItem(
+        "myPlaylists",
+        JSON.stringify(myPlaylists)
+    );
+
+}
+
+
+// Add Example
+manageLink({
+    name:"My Spotify Playlist",
+    url:"https://spotify.com"
+},"add");
+
+
+// Edit Example
+manageLink({
+    index:0,
+    name:"Updated Playlist",
+    url:"https://youtube.com"
+},"edit");
+    </script>
+</body>
+</html>

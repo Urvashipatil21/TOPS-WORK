@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let socialLinks = [];
+
+function addPlaylistLink(linkObj){
+
+    socialLinks.push(linkObj);
+
+    localStorage.setItem(
+        "myLinks",
+        JSON.stringify(socialLinks)
+    );
+
+    console.log("Playlist link added");
+}
+
+
+// Example
+addPlaylistLink({
+    name:"Spotify",
+    url:"https://spotify.com"
+});
+</script>
+</body>
+</html>

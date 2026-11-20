@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Shopping Cart</h2>
+
+<button id="add">Add Random Product</button>
+
+<div id="cart">
+
+<div class="card">
+iPhone
+<span class="x">X</span>
+</div>
+
+<div class="card">
+Watch
+<span class="x">X</span>
+</div>
+
+</div>
+
+
+<script>
+
+const cart=document.getElementById("cart");
+const add=document.getElementById("add");
+
+
+cart.addEventListener("click",function(e){
+
+if(e.target.classList.contains("x")){
+    e.target.parentElement.remove();
+}
+
+});
+
+
+add.addEventListener("click",function(){
+
+let card=document.createElement("div");
+
+card.className="card";
+
+card.innerHTML=
+"New Product <span class='x'>X</span>";
+
+cart.appendChild(card);
+
+});
+
+
+</script>
+
+</body>
+</html>

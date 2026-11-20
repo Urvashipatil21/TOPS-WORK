@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function showMenuItem(name, price) {
+
+  let div = document.createElement("div");
+
+  div.innerHTML = `
+  <h3>${name}</h3>
+  <p>Price: ₹${price}</p>
+  `;
+
+  div.style.border = "1px solid black";
+  div.style.padding = "10px";
+
+  document.body.appendChild(div);
+}
+
+showMenuItem("Pizza", 299);
+showMenuItem("Burger", 199);
+showMenuItem("Pasta", 249);
+
+    </script>
+    
+</body>
+</html>
+
+

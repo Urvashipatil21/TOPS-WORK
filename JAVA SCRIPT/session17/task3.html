@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Favorite Songs</h2>
+
+<ul id="songList">
+    <li>
+        Tum Hi Ho
+        <button>Remove</button>
+    </li>
+
+    <li>
+        Kesariya
+        <button>Remove</button>
+    </li>
+
+    <li>
+        Apna Bana Le
+        <button>Remove</button>
+    </li>
+</ul>
+
+
+<script>
+
+const list = document.getElementById("songList");
+
+list.addEventListener("click",function(e){
+
+    if(e.target.tagName==="BUTTON"){
+        e.target.parentElement.remove();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

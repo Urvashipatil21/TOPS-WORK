@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let movies = ['Jawan', 'Pathaan', 'Dunki'];
+
+// Convert array into JSON string
+localStorage.setItem('movies', JSON.stringify(movies));
+
+
+// Get data from localStorage
+let saved = localStorage.getItem('movies');
+
+
+// Convert JSON string back into array
+let arr = JSON.parse(saved);
+
+console.log(arr);
+    </script>
+</body>
+</html>

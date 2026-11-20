@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Add Review</title>
+</head>
+
+<body>
+
+<h2>Add Your Review</h2>
+
+<textarea id="userReview" placeholder="Enter your review"></textarea>
+
+<p id="reviewError" style="color:red;"></p>
+
+<button onclick="submitReview()">Submit</button>
+
+<p id="result" style="color:green;"></p>
+
+
+<script>
+
+function submitReview(){
+
+    let review = document.getElementById("userReview").value;
+
+    let reviewError = document.getElementById("reviewError");
+    let result = document.getElementById("result");
+
+
+    // Remove old messages
+    reviewError.innerHTML = "";
+    result.innerHTML = "";
+
+
+    // Validation
+    if(review.trim() === ""){
+        reviewError.innerHTML = "Please write a review before submitting";
+        return false;
+    }
+
+
+    result.innerHTML = "Review added successfully";
+
+}
+
+</script>
+
+</body>
+</html>

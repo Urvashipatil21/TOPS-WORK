@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function editPlaylistLink(index,newLinkObj){
+
+    let playlists = JSON.parse(
+        localStorage.getItem("myPlaylists")
+    ) || [];
+
+
+    playlists[index] = newLinkObj;
+
+
+    localStorage.setItem(
+        "myPlaylists",
+        JSON.stringify(playlists)
+    );
+
+}
+    </script>
+</body>
+</html>

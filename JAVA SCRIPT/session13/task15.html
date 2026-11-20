@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Explanation:
+// The error happened because the function received an invalid value.
+// The stack trace shows the exact function and line number where the error occurred.
+
+function checkAge(age) {
+
+    if(age < 18) {
+        throw new Error("Age must be 18 or above");
+    }
+
+    return "Allowed";
+}
+
+
+try {
+    console.log(checkAge(15));
+}
+catch(error) {
+    console.log(error.stack);
+}
+    </script>
+</body>
+</html>

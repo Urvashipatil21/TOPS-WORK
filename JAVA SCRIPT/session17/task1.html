@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Song Cards</title>
+</head>
+<body>
+
+<h2>Song List</h2>
+
+<div id="songContainer">
+    <div class="card">
+        <span>Perfect - Ed Sheeran</span>
+        <button class="remove">X</button>
+    </div>
+
+    <div class="card">
+        <span>Believer - Imagine Dragons</span>
+        <button class="remove">X</button>
+    </div>
+
+    <div class="card">
+        <span>Shape of You - Ed Sheeran</span>
+        <button class="remove">X</button>
+    </div>
+</div>
+
+<script>
+const container = document.getElementById("songContainer");
+
+container.addEventListener("click", function(event){
+
+    if(event.target.classList.contains("remove")){
+        event.target.parentElement.remove();
+    }
+
+});
+</script>
+
+</body>
+</html>

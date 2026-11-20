@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let products = [
+  { name: "Mobile", price: 15000, isInStock: true },
+  { name: "Laptop", price: 50000, isInStock: false },
+  { name: "Headphones", price: 2000, isInStock: true }
+];
+
+let inStockProducts = products.filter(product => product.isInStock);
+
+console.log(inStockProducts);
+    </script>
+</body>
+</html>

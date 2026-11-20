@@ -1,0 +1,171 @@
+/* Main application container */
+.App {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.App h1 {
+  color: #1a365d;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Card container */
+.issue-register-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.issue-register-card h2 {
+  color: #2b6cb0;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Clock toggle checkbox */
+.clock-toggle-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.clock-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.clock-toggle-label input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* Live clock container */
+.live-clock-container {
+  background: #ebf8ff;
+  border: 1px solid #bee3f8;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.live-clock-container p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2b6cb0;
+}
+
+.clock-time {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #2c5282;
+  margin-left: 6px;
+}
+
+/* Book list */
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #edf2f7;
+  gap: 15px;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.book-title {
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.book-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Status badges */
+.status-badge {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 65px;
+}
+
+.badge-available {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.badge-issued {
+  background-color: #fed7d7;
+  color: #742a2a;
+}
+
+/* Toggle buttons */
+.btn-toggle-issue {
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-issue {
+  background-color: #3182ce;
+  color: #ffffff;
+}
+
+.btn-issue:hover {
+  background-color: #2b6cb0;
+}
+
+.btn-return {
+  background-color: #718096;
+  color: #ffffff;
+}
+
+.btn-return:hover {
+  background-color: #4a5568;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify Playlist</title>
+</head>
+
+<body>
+
+<h2>Create Playlist</h2>
+
+<form onsubmit="addPlaylist(event)">
+
+    <label>Playlist Name:</label><br>
+    <input type="text" id="playlistName">
+
+    <br><br>
+
+    <label>Description:</label><br>
+    <textarea id="playlistDescription"></textarea>
+
+    <br><br>
+
+    <button type="submit">Add Playlist</button>
+
+</form>
+
+
+<h2>Playlist List</h2>
+
+<div id="playlistList"></div>
+
+
+<script>
+
+let playlists = [];
+
+
+// Add playlist function
+function addPlaylist(event){
+
+    event.preventDefault();
+
+
+    let name = document.getElementById("playlistName").value;
+    let description = document.getElementById("playlistDescription").value;
+
+
+    let playlist = {
+        name: name,
+        description: description
+    };
+
+
+    playlists.push(playlist);
+
+
+    displayPlaylists();
+
+
+    // Clear form
+    document.getElementById("playlistName").value = "";
+    document.getElementById("playlistDescription").value = "";
+
+}
+
+
+
+// Display playlist function
+function displayPlaylists(){
+
+    let output = "";
+
+
+    playlists.forEach((playlist, index)=>{
+
+        output += `
+            <div>
+                <h3>${playlist.name}</h3>
+                <p>${playlist.description}</p>
+                <hr>
+            </div>
+        `;
+
+    });
+
+
+    document.getElementById("playlistList").innerHTML = output;
+
+}
+
+</script>
+
+</body>
+</html>

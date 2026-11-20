@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playlist Manager</title>
+</head>
+
+<body>
+
+<h2>Create Playlist</h2>
+
+<input type="text" id="name" placeholder="Playlist Name">
+<br><br>
+
+<textarea id="description" placeholder="Description"></textarea>
+<br><br>
+
+<button onclick="addPlaylist()">Add Playlist</button>
+
+
+<h2>Playlist List</h2>
+
+<div id="playlistList"></div>
+
+
+<script>
+
+let playlists = [];
+
+
+// Add Playlist
+function addPlaylist(){
+
+    let name = document.getElementById("name").value;
+    let description = document.getElementById("description").value;
+
+
+    let playlist = {
+        name: name,
+        description: description
+    };
+
+
+    playlists.push(playlist);
+
+
+    displayPlaylists();
+
+
+    document.getElementById("name").value = "";
+    document.getElementById("description").value = "";
+
+}
+
+
+
+// Display Playlist
+function displayPlaylists(){
+
+    let output = "";
+
+
+    playlists.forEach((item, index)=>{
+
+        output += `
+        <div>
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+
+            <button onclick="editPlaylist(${index})">
+                Edit
+            </button>
+
+            <button onclick="deletePlaylist(${index})">
+                Delete
+            </button>
+
+            <hr>
+        </div>
+        `;
+
+    });
+
+
+    document.getElementById("playlistList").innerHTML = output;
+
+}
+
+
+
+// Edit Playlist
+function editPlaylist(index){
+
+    let newName = prompt(
+        "Enter new playlist name",
+        playlists[index].name
+    );
+
+
+    let newDescription = prompt(
+        "Enter new description",
+        playlists[index].description
+    );
+
+
+    if(newName && newDescription){
+
+        playlists[index].name = newName;
+        playlists[index].description = newDescription;
+
+        displayPlaylists();
+    }
+
+}
+
+
+
+// Delete Playlist
+function deletePlaylist(index){
+
+    playlists.splice(index,1);
+
+    displayPlaylists();
+
+}
+
+</script>
+
+
+</body>
+</html>

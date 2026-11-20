@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Login Form</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+<p id="emailError" style="color:red"></p>
+
+<input type="password" id="password" placeholder="Enter Password">
+<p id="passwordError" style="color:red"></p>
+
+<button onclick="login()">Login</button>
+
+<p id="result"></p>
+
+
+<script>
+
+function login(){
+
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+
+document.getElementById("emailError").innerHTML="";
+document.getElementById("passwordError").innerHTML="";
+
+
+if(email==""){
+    document.getElementById("emailError").innerHTML =
+    "Email is required";
+}
+
+
+if(password==""){
+    document.getElementById("passwordError").innerHTML =
+    "Password is required";
+}
+
+
+if(email!="" && password!=""){
+    document.getElementById("result").innerHTML =
+    "Login Successful";
+}
+
+}
+
+</script>
+
+</body>
+</html>

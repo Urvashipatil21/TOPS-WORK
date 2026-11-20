@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3</title>
+    <style>
+        .card{
+            border:1px solid black;
+            width:200px;
+            padding:10px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="addSong()">Add Song</button>
+
+<div id="songs"></div>
+
+<script>
+const playlist=[
+"Kesariya",
+"Apna Bana Le",
+"Perfect",
+"Tum Hi Ho"
+];
+
+function addSong(){
+let randomSong=playlist[Math.floor(Math.random()*playlist.length)];
+
+document.getElementById("songs").innerHTML+=
+"<div class='card'>"+randomSong+"</div>";
+}
+</script>
+
+</body>
+</html>

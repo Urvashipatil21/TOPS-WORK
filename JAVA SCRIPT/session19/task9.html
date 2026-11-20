@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Restaurant List</title>
+</head>
+
+<body>
+
+<h2>Add Restaurant</h2>
+
+<input type="text" id="restaurantName" placeholder="Restaurant Name">
+<br><br>
+
+<input type="text" id="cuisine" placeholder="Cuisine">
+<br><br>
+
+<input type="number" id="rating" placeholder="Rating">
+<br><br>
+
+<button onclick="addRestaurant()">Add Restaurant</button>
+
+
+<h2>Restaurant List</h2>
+
+<div id="restaurantList"></div>
+
+
+<script>
+
+let restaurants = [];
+
+
+// Add Restaurant
+function addRestaurant(){
+
+    let name = document.getElementById("restaurantName").value;
+    let cuisine = document.getElementById("cuisine").value;
+    let rating = document.getElementById("rating").value;
+
+
+    restaurants.push({
+        name:name,
+        cuisine:cuisine,
+        rating:rating
+    });
+
+
+    displayRestaurants();
+
+
+    document.getElementById("restaurantName").value="";
+    document.getElementById("cuisine").value="";
+    document.getElementById("rating").value="";
+
+}
+
+
+
+// Display Restaurants
+function displayRestaurants(){
+
+    let output = "";
+
+
+    restaurants.forEach((restaurant,index)=>{
+
+        output += `
+        <div>
+            <h3>${restaurant.name}</h3>
+            <p>Cuisine: ${restaurant.cuisine}</p>
+            <p>Rating: ${restaurant.rating}</p>
+
+            <button onclick="editRestaurant(${index})">
+                Edit
+            </button>
+
+            <button onclick="deleteRestaurant(${index})">
+                Delete
+            </button>
+
+            <hr>
+        </div>
+        `;
+
+    });
+
+
+    document.getElementById("restaurantList").innerHTML = output;
+
+}
+
+
+
+// Edit Restaurant
+function editRestaurant(index){
+
+    let newName = prompt(
+        "Enter Restaurant Name",
+        restaurants[index].name
+    );
+
+
+    let newCuisine = prompt(
+        "Enter Cuisine",
+        restaurants[index].cuisine
+    );
+
+
+    let newRating = prompt(
+        "Enter Rating",
+        restaurants[index].rating
+    );
+
+
+    restaurants[index].name = newName;
+    restaurants[index].cuisine = newCuisine;
+    restaurants[index].rating = newRating;
+
+
+    displayRestaurants();
+
+}
+
+
+
+// Delete Restaurant
+function deleteRestaurant(index){
+
+    restaurants.splice(index,1);
+
+    displayRestaurants();
+
+}
+
+
+</script>
+
+
+</body>
+</html>

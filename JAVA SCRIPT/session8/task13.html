@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orders = [
+  {
+    orderId: 101,
+    items: [
+      {
+        itemName: "Phone",
+        price: 15000
+      },
+      {
+        itemName: "Cover",
+        price: 500
+      }
+    ],
+    delivery: {
+      address: "Mumbai",
+      status: "Delivered"
+    }
+  },
+  {
+    orderId: 102,
+    items: [
+      {
+        itemName: "Laptop",
+        price: 55000
+      },
+      {
+        itemName: "Mouse",
+        price: 800
+      }
+    ],
+    delivery: {
+      address: "Pune",
+      status: "Shipped"
+    }
+  }
+];
+
+for (let order of orders) {
+  let total = 0;
+
+  for (let item of order.items) {
+    total += item.price;
+  }
+
+  console.log("Order ID:", order.orderId);
+  console.log("Total Price:", total);
+}
+    </script>
+</body>
+</html>

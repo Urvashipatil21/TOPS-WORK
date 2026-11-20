@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add To Cart</title>
+</head>
+<body>
+
+<h2>Flipkart Style Product</h2>
+
+<h3>Product: Shoes</h3>
+<p>Price: ₹2000</p>
+
+<button onclick="addToCart()">Add To Cart</button>
+
+<h3>Cart Count: <span id="cartCount">0</span></h3>
+
+<div id="cartItems"></div>
+
+
+<script>
+
+let cart = [];
+
+function addToCart(){
+
+    let product = {
+        id: 1,
+        name: "Shoes",
+        price: 2000
+    };
+
+    // Check duplicate product
+    let alreadyAdded = cart.find(item => item.id === product.id);
+
+
+    if(alreadyAdded){
+        alert("Product already added to cart");
+    }
+    else{
+        cart.push(product);
+        alert("Product added successfully");
+    }
+
+
+    // Update cart count
+    document.getElementById("cartCount").innerHTML = cart.length;
+
+
+    showCart();
+}
+
+
+function showCart(){
+
+    let output = "";
+
+    cart.forEach(item => {
+        output += `<p>${item.name} - ₹${item.price}</p>`;
+    });
+
+
+    document.getElementById("cartItems").innerHTML = output;
+}
+
+</script>
+
+</body>
+</html>

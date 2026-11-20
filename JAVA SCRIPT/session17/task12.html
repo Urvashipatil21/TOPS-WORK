@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>Cards</h2>
+
+<button id="addCard">
+Add Card
+</button>
+
+
+<div id="container">
+
+
+<div class="card">
+
+Song 1
+
+<button class="remove-btn">
+X
+</button>
+
+</div>
+
+
+<div class="card">
+
+Song 2
+
+<button class="remove-btn">
+X
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+const container = document.getElementById("container");
+
+const add = document.getElementById("addCard");
+
+
+
+// Add new cards dynamically
+
+add.addEventListener("click",function(){
+
+let card = document.createElement("div");
+
+card.className="card";
+
+card.innerHTML =
+"New Song <button class='remove-btn'>X</button>";
+
+container.appendChild(card);
+
+});
+
+
+
+// Single Event Listener (Event Delegation)
+
+container.addEventListener("click",function(event){
+
+
+if(event.target.classList.contains("remove-btn")){
+
+
+event.target.parentElement.remove();
+
+
+}
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify Playlist Manager</title>
+</head>
+
+<body>
+
+<h2>Create Playlist</h2>
+
+<input type="text" id="playlistName" placeholder="Playlist Name">
+
+<br><br>
+
+<textarea id="playlistDesc" placeholder="Playlist Description"></textarea>
+
+<br><br>
+
+<button onclick="addPlaylist()">Add Playlist</button>
+
+
+<h2>Playlist List</h2>
+
+<div id="display"></div>
+
+
+<script>
+
+let playlists = [];
+
+
+// Add Playlist Function
+function addPlaylist(){
+
+    let name = document.getElementById("playlistName").value;
+    let desc = document.getElementById("playlistDesc").value;
+
+
+    playlists.push({
+        name:name,
+        description:desc
+    });
+
+
+    showPlaylists();
+
+
+    document.getElementById("playlistName").value="";
+    document.getElementById("playlistDesc").value="";
+
+}
+
+
+
+// Show Playlist Function
+function showPlaylists(){
+
+    let result = "";
+
+
+    playlists.forEach((playlist,index)=>{
+
+        result += `
+        <div>
+            <h3>${playlist.name}</h3>
+            <p>${playlist.description}</p>
+
+            <button onclick="editPlaylist(${index})">
+            Edit
+            </button>
+
+            <button onclick="deletePlaylist(${index})">
+            Delete
+            </button>
+
+            <hr>
+        </div>
+        `;
+
+    });
+
+
+    document.getElementById("display").innerHTML=result;
+
+}
+
+
+
+// Edit Playlist
+function editPlaylist(index){
+
+    let updatedName = prompt(
+        "Update Playlist Name",
+        playlists[index].name
+    );
+
+
+    let updatedDesc = prompt(
+        "Update Description",
+        playlists[index].description
+    );
+
+
+    if(updatedName != null && updatedDesc != null){
+
+        playlists[index].name = updatedName;
+        playlists[index].description = updatedDesc;
+
+        showPlaylists();
+
+    }
+
+}
+
+
+
+// Delete Playlist
+function deletePlaylist(index){
+
+    playlists.splice(index,1);
+
+    showPlaylists();
+
+}
+
+
+</script>
+
+</body>
+</html>

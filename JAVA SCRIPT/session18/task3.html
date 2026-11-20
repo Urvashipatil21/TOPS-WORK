@@ -1,0 +1,51 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const songs = [
+    {
+        title: "Perfect",
+        artist: "Ed Sheeran",
+        duration: "4:23"
+    },
+    {
+        title: "Believer",
+        artist: "Imagine Dragons",
+        duration: "3:24"
+    },
+    {
+        title: "Kesariya",
+        artist: "Arijit Singh",
+        duration: "4:28"
+    },
+    {
+        title: "Shape Of You",
+        artist: "Ed Sheeran",
+        duration: "3:53"
+    },
+    {
+        title: "Closer",
+        artist: "The Chainsmokers",
+        duration: "4:04"
+    }
+];
+
+console.table(
+    songs.map((song, index) => ({
+        Index: index,
+        Title: song.title,
+        Artist: song.artist,
+        Duration: song.duration
+    }))
+);
+    </script>
+</body>
+</html>

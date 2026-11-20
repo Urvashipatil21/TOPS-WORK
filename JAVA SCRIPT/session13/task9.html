@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getOrderTotal(items) {
+
+    let total = 0;
+
+    for (let item of items) {
+
+        if (item.price < 0) {
+            throw new Error("Invalid item price");
+        }
+
+        total += item.price;
+    }
+
+    return total;
+}
+
+
+let order = [
+    {
+        name: "Pizza",
+        price: 300
+    },
+    {
+        name: "Burger",
+        price: 150
+    }
+];
+
+
+try {
+    console.log("Total Bill:", getOrderTotal(order));
+}
+catch(error) {
+    console.log("Order failed:", error.message);
+}
+    </script>
+</body>
+</html>                        
+
+                //negative price//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let order = [
+    {
+        name:"Pizza",
+        price:300
+    },
+    {
+        name:"Burger",
+        price:-50
+    }
+];
+
+try {
+    console.log(getOrderTotal(order));
+}
+catch(error){
+    console.log("Order failed:", error.message);
+}
+    </script>
+</body>
+</html>

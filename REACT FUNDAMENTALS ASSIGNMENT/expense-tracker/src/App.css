@@ -1,0 +1,400 @@
+/* Main application container */
+.App {
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.App h1 {
+  color: #0f766e;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 25px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* NavLink base styling */
+.nav-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #0f766e;
+}
+
+/* Automatic .active class styled with bold text and an underline to highlight current page */
+.nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+  color: #0f766e;
+}
+
+/* Budget remaining indicator in navbar */
+.budget-indicator {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #0f766e;
+  background-color: #f0fdfa;
+  border: 1px solid #99f6e4;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Styled in red when total spending exceeds monthly budget */
+.budget-indicator.over-budget {
+  color: #dc2626;
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+}
+
+/* Card containers */
+.expense-form-card,
+.expense-list-card,
+.summary-page-card,
+.not-found-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.expense-form-card h2,
+.expense-list-card h2,
+.summary-page-card h2 {
+  color: #115e59;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form layout */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #334155;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0f766e;
+}
+
+/* Submit button */
+.btn-submit {
+  background-color: #0f766e;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #115e59;
+}
+
+/* Error message styling */
+.error-message {
+  min-height: 22px;
+  color: #dc2626;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 12px 0 0 0;
+  text-align: center;
+}
+
+/* Live preview box */
+.preview-box {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f0fdfa;
+  border: 1px dashed #2dd4bf;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.preview-box h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #0f766e;
+}
+
+.preview-text {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #134e4a;
+}
+
+/* Expense List */
+.expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  gap: 15px;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-main {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.expense-title {
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.expense-date {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.expense-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.expense-amount {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #047857;
+}
+
+/* Delete button on each expense row */
+.btn-delete {
+  background-color: transparent;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+/* Category Badges */
+.category-badge {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.category-food {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.category-travel {
+  background-color: #bae6fd;
+  color: #0369a1;
+}
+
+.category-bills {
+  background-color: #fecdd3;
+  color: #9f1239;
+}
+
+.category-fun {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.no-expenses {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Summary Page Styling */
+.budget-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.budget-label {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.budget-input {
+  width: 140px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  text-align: right;
+  font-weight: bold;
+  color: #0f766e;
+}
+
+.budget-input:focus {
+  border-color: #0f766e;
+}
+
+.overall-summary {
+  background-color: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.overall-summary p {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  color: #115e59;
+}
+
+.total-amount {
+  margin: 0;
+  font-size: 2rem;
+  color: #0f766e;
+}
+
+.category-breakdown h3 {
+  font-size: 1.1rem;
+  color: #334155;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.breakdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.breakdown-item:last-child {
+  border-bottom: none;
+}
+
+/* 404 Not Found Page */
+.not-found-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.not-found-card h2 {
+  font-size: 3rem;
+  color: #dc2626;
+  margin: 0 0 10px 0;
+}
+
+.not-found-card p {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+.btn-home {
+  display: inline-block;
+  background-color: #0f766e;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-home:hover {
+  background-color: #115e59;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Validation</title>
+</head>
+
+<body>
+
+<h2>User Login</h2>
+
+<form onsubmit="return validateLogin()">
+
+    <label>Email:</label>
+    <br>
+    <input type="email" id="email" placeholder="Enter Email">
+    <p id="emailError" style="color:red;"></p>
+
+
+    <label>Password:</label>
+    <br>
+    <input type="password" id="password" placeholder="Enter Password">
+    <p id="passwordError" style="color:red;"></p>
+
+
+    <button type="submit">Login</button>
+
+</form>
+
+
+<p id="success" style="color:green;"></p>
+
+
+<script>
+
+function validateLogin(){
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+    let success = document.getElementById("success");
+
+
+    // Remove old errors
+    emailError.innerHTML = "";
+    passwordError.innerHTML = "";
+    success.innerHTML = "";
+
+
+    let isValid = true;
+
+
+    if(email === ""){
+        emailError.innerHTML = "Please enter email";
+        isValid = false;
+    }
+
+
+    if(password === ""){
+        passwordError.innerHTML = "Please enter password";
+        isValid = false;
+    }
+
+
+    if(isValid){
+        success.innerHTML = "Login Successfully";
+    }
+
+
+    // Prevent form refresh
+    return false;
+
+}
+
+</script>
+
+
+</body>
+</html>

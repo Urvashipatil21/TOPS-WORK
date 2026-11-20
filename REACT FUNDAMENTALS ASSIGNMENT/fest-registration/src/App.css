@@ -1,0 +1,287 @@
+/* Main application container */
+.App {
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #fdfbf7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.App h1 {
+  color: #7b1fa2;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Card container */
+.registration-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.registration-card h2 {
+  color: #4a148c;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Toggle container */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-toggle {
+  background-color: #ef6c00;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-toggle:hover {
+  background-color: #e65100;
+}
+
+/* Form inputs */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #7b1fa2;
+}
+
+/* Checkbox group */
+.checkbox-group {
+  text-align: left;
+  margin-top: 5px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #333333;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Submit button */
+.btn-submit {
+  background-color: #7b1fa2;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 5px;
+}
+
+.btn-submit:hover {
+  background-color: #6a1b9a;
+}
+
+/* Status message */
+.status-message {
+  min-height: 24px;
+  margin: 15px 0 0 0;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1565c0;
+}
+
+/* Live preview box */
+.preview-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f3e5f5;
+  border: 1px dashed #ab47bc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.preview-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #6a1b9a;
+}
+
+.preview-text {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  color: #4a148c;
+}
+
+.fee-text {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Registered participants list */
+.registered-list-section {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f3e5f5;
+  padding-bottom: 10px;
+}
+
+.list-header h3 {
+  font-size: 1.15rem;
+  color: #4a148c;
+  margin: 0;
+}
+
+.hostel-rooms-count {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #e65100;
+}
+
+/* Filter group */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4a148c;
+}
+
+.filter-group select {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ce93d8;
+  border-radius: 4px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.registrations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.registration-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: #faf5fc;
+  border: 1px solid #ede7f6;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.participant-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  background-color: #d1c4e9;
+  color: #311b92;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.hostel-badge {
+  background-color: #ffecb3;
+  color: #b78103;
+}
+
+/* Remove button */
+.btn-remove {
+  background-color: #e53935;
+  color: #ffffff;
+  border: none;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-remove:hover {
+  background-color: #c62828;
+}
+
+.empty-message {
+  text-align: center;
+  color: #757575;
+  font-style: italic;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}

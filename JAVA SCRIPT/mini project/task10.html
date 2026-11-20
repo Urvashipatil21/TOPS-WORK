@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function manageLink(linkObj, mode){
+
+    let playlists = JSON.parse(
+        localStorage.getItem("myPlaylists")
+    ) || [];
+
+
+    if(mode === "add"){
+
+        playlists.push(linkObj);
+
+    }
+
+
+    else if(mode === "edit"){
+
+        playlists[linkObj.index] = {
+            name: linkObj.name,
+            url: linkObj.url
+        };
+
+    }
+
+
+    localStorage.setItem(
+        "myPlaylists",
+        JSON.stringify(playlists)
+    );
+
+}
+    </script>
+</body>
+</html>

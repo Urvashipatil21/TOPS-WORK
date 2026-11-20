@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Flipkart Wishlist</h2>
+
+<button id="add">Add Product</button>
+
+<div id="wishlist">
+
+<div class="product">
+Mobile
+<button class="remove">Remove</button>
+</div>
+
+<div class="product">
+Laptop
+<button class="remove">Remove</button>
+</div>
+
+</div>
+
+
+<script>
+
+const wishlist=document.getElementById("wishlist");
+const add=document.getElementById("add");
+
+
+add.addEventListener("click",function(){
+
+let div=document.createElement("div");
+
+div.className="product";
+
+div.innerHTML=
+"New Product <button class='remove'>Remove</button>";
+
+wishlist.appendChild(div);
+
+});
+
+
+wishlist.addEventListener("click",function(e){
+
+if(e.target.classList.contains("remove")){
+    e.target.parentElement.remove();
+}
+
+});
+
+</script>
+
+</body>
+</html>
